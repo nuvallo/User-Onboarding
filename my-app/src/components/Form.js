@@ -1,10 +1,19 @@
 import React from "react";
-import { withFormik, Form, Field } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 function OnBoard() {
-  return <h1>hello</h1>;
+  return (
+    <Formik>
+      <Form>
+        <Field placeHolder="Enter Name" />
+        <Field placeHolder="Enter Email" />
+        <Field type="password" placeHolder="Enter password" />
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
+  );
 }
 
 export default OnBoard;
