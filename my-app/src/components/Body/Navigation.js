@@ -5,7 +5,7 @@ function Navigation() {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Team Builder Form</NavbarBrand>
+        <NavbarBrand href="/">User OnBoard</NavbarBrand>
         <Nav className="mr-auto" navbar>
           <NavItem>
             <NavLink href="/components/">Home</NavLink>

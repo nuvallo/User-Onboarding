@@ -6,7 +6,6 @@ import NavBar from "./components/Body/Navigation";
 
 function App() {
   const [users, setUsers] = useState([]);
-
   return (
     <div className="App">
       <NavBar />

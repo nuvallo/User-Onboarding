@@ -3,10 +3,11 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-function UserForm({ values, errors, touched, status, users, setUsers }) {
+function UserForm({ status, users, setUsers }) {
   useEffect(() => {
     status && setUsers([...users, status]);
   }, [status]);
+
   return (
     <div>
       <Form className="user-form">
@@ -30,6 +31,20 @@ function UserForm({ values, errors, touched, status, users, setUsers }) {
             placeholder="Password"
           />
         </label>
+
+        <label>
+          Select Role
+          <br />
+          <Field name="role" value={users.role} as="select">
+            <option disabled selected>
+              Choose
+            </option>
+            <option>Student</option>
+            <option>Tech Lead</option>
+            <option>Section Lead</option>
+          </Field>
+        </label>
+
         <label htmlFor="terms">
           <Field id="field" type="checkbox" name="terms" required />
           Accept Terms of Service
@@ -48,12 +63,14 @@ const FormikUserForm = withFormik({
       name: props.name || "",
       email: props.email || "",
       password: props.password || "",
+      role: props.role || "",
       terms: props.terms || false
     };
   },
   validationSchema: Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().required(),
+    role: Yup.string().required(),
     password: Yup.string().required()
   }),
   handleSubmit(values, { setStatus, resetForm }) {
