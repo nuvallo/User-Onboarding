@@ -4,9 +4,12 @@ import * as Yup from "yup";
 import axios from "axios";
 
 function UserForm({ values, errors, touched, status, users, setUsers }) {
+  useEffect(() => {
+    status && setUsers([...users, status]);
+  }, [status]);
   return (
-    <div className="user-form">
-      <Form>
+    <div>
+      <Form className="user-form">
         <label htmlFor="name">
           Name
           <Field type="text" name="name" placeholder="Name" />
