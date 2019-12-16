@@ -1,5 +1,5 @@
 import React from "react";
-import OnBoard from "./components/Form";
+import OnBoard from "./components/Form/Form";
 import "./App.css";
 
 function App() {

@@ -37,6 +37,23 @@ const FormikUserForm = withFormik({
       password: props.password || "",
       terms: props.terms || false
     };
+  },
+  validationSchema: Yup.object().shape({
+    name: Yup.string().required(),
+    email: Yup.string().required(),
+    password: Yup.string().required()
+  }),
+  handleSubmit(values, { setStatus, resetForm }) {
+    console.log("values", values);
+    axios
+      .post("https://reqres.in/api/users", values)
+      .then(reset => {
+        console.log("success", reset);
+        setStatus(reset.data);
+        resetForm();
+      })
+      .catch(error => console.log("error", error));
   }
 })(UserForm);
+
 export default FormikUserForm;
