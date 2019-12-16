@@ -12,21 +12,31 @@ function UserForm({ values, errors, touched, status, users, setUsers }) {
       <Form className="user-form">
         <label htmlFor="name">
           Name
-          <Field type="text" name="name" placeholder="Name" />
+          <br />
+          <Field id="field" type="text" name="name" placeholder="Name" />
         </label>
         <label htmlFor="email">
           Email
-          <Field type="email" name="email" placeholder="Email" />
+          <br />
+          <Field id="field" type="email" name="email" placeholder="Email" />
         </label>
         <label htmlFor="password">
           Password
-          <Field type="password" name="password" placeholder="Password" />
+          <br />
+          <Field
+            id="field"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
         </label>
         <label htmlFor="terms">
-          <Field type="checkbox" name="terms" required />
+          <Field id="field" type="checkbox" name="terms" required />
           Accept Terms of Service
         </label>
-        <button type="submit">Submit</button>
+        <button id="main-btn" type="submit">
+          Submit
+        </button>
       </Form>
     </div>
   );
