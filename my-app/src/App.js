@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import FormikUserForm from "./components//Form/Form";
-import UserList from "./components/Form/UserList";
+import FormikUserForm from "./components/Form/UserForm";
+import UserCard from "./components/Body/UserCard";
 import NavBar from "./components/Body/Navigation";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar />
       <FormikUserForm setUsers={setUsers} users={users} />
-      <UserList users={users} />
+      <UserCard users={users} />
     </div>
   );
 }

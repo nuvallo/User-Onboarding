@@ -8,7 +8,7 @@ import {
   Button
 } from "reactstrap";
 
-function UserList({ users }) {
+function UserCard({ users }) {
   return (
     <div className="card-container">
       {users.map(user => {
@@ -26,4 +26,4 @@ function UserList({ users }) {
   );
 }
 
-export default UserList;
+export default UserCard;
